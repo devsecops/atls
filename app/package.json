@@ -1,0 +1,39 @@
+{
+  "name": "atls",
+  "version": "1.0.0",
+  "description": "atls",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devsecops/atls.git"
+  },
+  "keywords": [
+    "slack",
+    "bot",
+    "list",
+    "bookmarks"
+  ],
+  "author": "Mike Diaz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/devsecops/atls/issues"
+  },
+  "homepage": "https://github.com/devsecops/atls",
+  "engines": {
+    "node": "5.1.1"
+  },
+  "dependencies": {
+    "botkit": ">=0.2.2",
+    "dotenv": "^4.0.0",
+    "request": ">=2.78.0",
+    "mongodb": ">=1.4.39",
+    "nodemon": ">=1.11.0",
+    "safe-eval": "^0.3.0",
+    "localtunnel": ">=1.8.2",
+    "botkit-storage-mongo": ">=1.0.2"
+  }
+}
