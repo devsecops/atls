@@ -1,0 +1,30 @@
+version: '2'
+services:
+    atls:
+      build:
+        context: .
+        dockerfile: Dockerfile
+      container_name: "atls"
+      image: atls:latest
+      environment:
+        - LT_PORT=8080
+        - LT_SUBDOMAIN=ChangeMe
+      volumes:
+        - ./app:/opt/atls
+      ports:
+          - 8080:8080
+      links:
+          - mongodb
+      depends_on:
+          - mongodb
+    mongodb:
+        image: mongo:latest
+        container_name: "mongodb"
+        environment:
+          - MONGO_DATA_DIR=/data/db
+          - MONGO_LOG_DIR=/dev/null
+        volumes:
+          - ./db:/data/db
+        ports:
+            - 27017:27017
+        command: mongod --smallfiles --logpath=/dev/null
